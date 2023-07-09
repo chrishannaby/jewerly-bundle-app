@@ -1,0 +1,8 @@
+name = "bundle-cart-transform"
+type = "cart_transform"
+title = "cart transform"
+api_version = "unstable"
+
+[build]
+command = ""
+path = "dist/function.wasm"

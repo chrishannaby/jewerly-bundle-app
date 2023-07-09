@@ -1,0 +1,28 @@
+query Input {
+  cart {
+    lines {
+      id
+      quantity
+      bundleId: attribute(key: "bundleId") {
+        value
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          title
+          product {
+            id
+            title
+            bundleConfiguration: metafield(
+              namespace: "custom"
+              key: "bundle_configuration"
+            ) {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
